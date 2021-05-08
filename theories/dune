@@ -1,0 +1,5 @@
+(coq.theory
+ (name AlgGeom)
+ (package coq-hott-alggeom)
+ (synopsis "Algebraic Geometry based on the HoTT library")
+ (flags -noinit -indices-matter))

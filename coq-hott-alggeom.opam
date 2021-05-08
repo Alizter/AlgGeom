@@ -1,0 +1,21 @@
+opam-version: "2.0"
+maintainer: [ "Ali Caglayan <alizter@gmail.com>" ]
+bug-reports: "https://github.com/alizter/AlgGeom/issues"
+build: [
+  [dune build]
+]
+install: [dune install]
+depends: [
+  "coq" {= "dev"}
+  "hott" {= "dev"}
+  #"coq-hott {= "dev"}
+]
+authors: ["Ali Caglayan"]
+dev-repo: "git+https://github.com/alizter/AlgGeom.git"
+synopsis: "Algebraic Geometry developed on top of the Homotopy Type Theory library"
+description: """
+This is a development of algebraic geometry using the HoTT library.
+"""
+url {
+  src: "git+https://github.com/alizter/AlgGeom.git#main"
+}
