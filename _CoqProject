@@ -1,3 +1,5 @@
+-R _build/default/theories AlgGeom
+
 -arg -noinit
 -arg -indices-matter
 
