@@ -23,4 +23,9 @@ Section ExtraLemmas.
 
   Definition rng_negate_zero : - 0 = 0 :> R := negate_0.
 
+  Lemma rng_dist_l_negate : x * (y - z) = x * y - x * z.
+  Proof.
+    by rewrite rng_dist_l, rng_mult_negate_r.
+  Defined.
+
 End ExtraLemmas.
