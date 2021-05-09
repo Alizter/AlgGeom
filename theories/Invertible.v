@@ -15,7 +15,7 @@ Class IsInvertible {R : CRing} (r : R) : Type := Build_IsInvertible' {
 Arguments Build_IsInvertible' {R}.
 
 (** Since our rings are commutative, we only need to show one side. *)
-Definition Build_IsInvertible {R : CRing} (r : R)
+Definition Build_IsInvertible {R : CRing} {r : R}
   (inv : R) (l : inv * r = 1)
   : IsInvertible r.
 Proof.
@@ -45,3 +45,23 @@ Proof.
   refine (_ @ rng_mult_one_r _).
   f_ap.
 Defined.
+
+(** *** Properties of invertible elements *)
+
+(** The multplicative unit is always invertible. *)
+Global Instance isinvertible_one {R : CRing} : IsInvertible (1 : R) :=
+  Build_IsInvertible 1 (rng_mult_one_r 1).
+
+(** Invertible elements are preserved by multiplication. *)
+Global Instance isinvertible_mult {R : CRing} (x y : R)
+  : IsInvertible x -> IsInvertible y -> IsInvertible (x * y).
+Proof.
+  intros [ix px qx] [iy py qy].
+  snrapply Build_IsInvertible.
+  1: exact (iy * ix).
+  refine ((rng_mult_assoc _ _ _)^ @ ap _ _ @ py).
+  refine (_ @ rng_mult_one_l _).
+  refine (rng_mult_assoc _ _ _ @ _).
+  f_ap.
+Defined.
+
