@@ -2,4 +2,9 @@
  (name AlgGeom)
  (package coq-hott-alggeom)
  (synopsis "Algebraic Geometry based on the HoTT library")
- (flags -noinit -indices-matter))
+ (flags
+	-noinit
+	-indices-matter
+;	-native-compiler no
+ )
+)
