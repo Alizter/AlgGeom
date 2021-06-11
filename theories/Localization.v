@@ -47,8 +47,6 @@ Global Instance ismultiplicative_isinvertible (R : CRing)
 
 (** TODO: Property of being a localization. *)
 
-(** TODO: Construction of a localization. *)
-
 (** ** Construction of localization. *)
 
 Section Localization.
